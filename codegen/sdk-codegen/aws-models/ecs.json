@@ -5532,6 +5532,9 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs\n\t\t\tto.</p>"
                     }
+                },
+                "zoneId": {
+                    "target": "com.amazonaws.ecs#String"
                 }
             },
             "traits": {
@@ -5558,6 +5561,9 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration.\n\t\t\tFor more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html\">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>"
                     }
+                },
+                "systemLogsEndpoint": {
+                    "target": "com.amazonaws.ecs#String"
                 }
             },
             "traits": {
@@ -9098,6 +9104,9 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The metadata that you apply to the container instance to help you categorize and\n\t\t\torganize them. Each tag consists of a key and an optional value. You define both.</p>\n         <p>The following basic restrictions apply to tags:</p>\n         <ul>\n            <li>\n               <p>Maximum number of tags per resource - 50</p>\n            </li>\n            <li>\n               <p>For each resource, each tag key must be unique, and each tag key can have only\n                    one value.</p>\n            </li>\n            <li>\n               <p>Maximum key length - 128 Unicode characters in UTF-8</p>\n            </li>\n            <li>\n               <p>Maximum value length - 256 Unicode characters in UTF-8</p>\n            </li>\n            <li>\n               <p>If your tagging schema is used across multiple services and resources,\n                    remember that other services may have restrictions on allowed characters.\n                    Generally allowed characters are: letters, numbers, and spaces representable in\n                    UTF-8, and the following characters: + - = . _ : / @.</p>\n            </li>\n            <li>\n               <p>Tag keys and values are case-sensitive.</p>\n            </li>\n            <li>\n               <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase\n                    combination of such as a prefix for either keys or values as it is reserved for\n                    Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with\n                    this prefix do not count against your tags per resource limit.</p>\n            </li>\n         </ul>"
                     }
+                },
+                "clientToken": {
+                    "target": "com.amazonaws.ecs#String"
                 }
             },
             "traits": {
