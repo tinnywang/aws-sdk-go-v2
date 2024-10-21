@@ -17,7 +17,6 @@ val smithyVersion: String by project
 
 plugins {
     `java-library`
-    jacoco
 }
 
 group = "software.amazon.smithy.go"
@@ -29,17 +28,6 @@ java {
     }
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
-    testLogging {
-        events("passed", "skipped", "failed")
-        showStandardStreams = true
-        showStackTraces = true
-        showExceptions = true
-        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
-    }
-}
-
 dependencies {
     api("software.amazon.smithy:smithy-aws-traits:$smithyVersion")
     api("software.amazon.smithy:smithy-aws-iam-traits:$smithyVersion")
@@ -47,21 +35,4 @@ dependencies {
     api("software.amazon.smithy:smithy-aws-endpoints:$smithyVersion")
     api("software.amazon.smithy:smithy-diff:$smithyVersion")
     api("software.amazon.smithy.go:smithy-go-codegen:0.1.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.4.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.4.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.4.0")
-    testImplementation("org.hamcrest:hamcrest:2.1")
-}
-
-// == Code coverage ==
-// Always run the jacoco test report after testing.
-tasks["test"].finalizedBy(tasks["jacocoTestReport"])
-
-// Configure jacoco to generate an HTML report.
-tasks.withType<JacocoReport> {
-    reports {
-        xml.isEnabled = false
-        csv.isEnabled = false
-        html.destination = file("$buildDir/reports/jacoco")
-    }
 }
